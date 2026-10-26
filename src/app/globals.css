@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--bg-color);
+  --color-foreground: var(--fg-color);
+  --color-primary: var(--primary-color);
+  --color-primary-foreground: var(--primary-fg);
+  --color-secondary: var(--secondary-color);
+  --color-card: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--muted-color);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-outfit);
+}
+
+@utility bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(128, 128, 128, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.1) 1px, transparent 1px);
+}
+
+:root {
+  /* Light mode */
+  --bg-color: #ffffff;
+  --fg-color: #09090b;
+  --primary-color: #8b5cf6;
+  --primary-fg: #ffffff;
+  --secondary-color: #3b82f6;
+  --card-bg: #f4f4f5;
+  --card-border: #e4e4e7;
+  --muted-color: #71717a;
+  color-scheme: light;
+}
+
+.dark {
+  /* Dark mode */
+  --bg-color: #09090b;
+  --fg-color: #fafafa;
+  --primary-color: #8b5cf6;
+  --primary-fg: #ffffff;
+  --secondary-color: #3b82f6;
+  --card-bg: #18181b;
+  --card-border: #27272a;
+  --muted-color: #a1a1aa;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
